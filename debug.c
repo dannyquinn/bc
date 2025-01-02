@@ -45,6 +45,8 @@ int disassembleInstruction(Chunk* chunk, int offset) {
             return simpleInstruction("OP_EQUAL", offset);
         case OP_FALSE: 
             return simpleInstruction("OP_FALSE", offset);
+        case OP_GET_GLOBAL:
+            return constantInstruction("OP_GET_GLOBAL", chunk, offset);
         case OP_GREATER:
             return simpleInstruction("OP_GREATER", offset);
         case OP_LESS:
@@ -63,6 +65,8 @@ int disassembleInstruction(Chunk* chunk, int offset) {
             return simpleInstruction("OP_POP", offset);
         case OP_RETURN:
             return simpleInstruction("OP_RETURN", offset);
+        case OP_SET_GLOBAL:
+            return constantInstruction("OP_SET_GLOBAL", chunk, offset);
         case OP_SUBTRACT: 
             return simpleInstruction("OP_SUBTRACT", offset);
         case OP_TRUE:
